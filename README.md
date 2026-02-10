@@ -1,5 +1,7 @@
 # Next.js based Psychology Portfolio
 
+### Hosted in Vercel: https://psychology-portfolio.vercel.app/
+
 ## Overview
 
 This project is a modern **Next.js (App Router)** based personal/academic portfolio website. It focuses on elegant UI, smooth reveal animations, responsive layouts, and interactive components like infinite carousels and timelines.
