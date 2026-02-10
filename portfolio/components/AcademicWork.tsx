@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+import Reveal from "@/components/Reveal";
+
 export default function AcademicWork() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -69,27 +71,29 @@ export default function AcademicWork() {
   };
 
   return (
-    <section className="academic">
-      <div className="academic-inner">
-        <h2>Academic Work</h2>
+    <Reveal>
+      <section className="academic">
+        <div className="academic-inner">
+          <h2>Academic Work</h2>
 
-        <div
-          className="academic-carousel"
-          ref={carouselRef}
-          onScroll={handleScroll}
-        >
-          {loopItems.map((item, i) => (
-            <div key={i} className={`academic-card ${item.bg}`}>
-              <div className="academic-icon">{item.icon}</div>
+          <div
+            className="academic-carousel"
+            ref={carouselRef}
+            onScroll={handleScroll}
+          >
+            {loopItems.map((item, i) => (
+              <div key={i} className={`academic-card ${item.bg}`}>
+                <div className="academic-icon">{item.icon}</div>
 
-              <div className="academic-overlay">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className="academic-overlay">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Reveal>
   );
 }
