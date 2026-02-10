@@ -1,4 +1,4 @@
-# Next.js Portfolio / Academic Site Documentation
+# Next.js based Psychology Portfolio
 
 ## Overview
 
