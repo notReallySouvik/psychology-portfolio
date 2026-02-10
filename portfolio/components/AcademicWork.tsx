@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 
 import Reveal from "@/components/Reveal";
 
+import { motion } from "framer-motion";
+
 export default function AcademicWork() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -76,22 +78,41 @@ export default function AcademicWork() {
         <div className="academic-inner">
           <h2>Academic Work</h2>
 
-          <div
+          <motion.div
             className="academic-carousel"
             ref={carouselRef}
             onScroll={handleScroll}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.08,
+                },
+              },
+            }}
           >
             {loopItems.map((item, i) => (
-              <div key={i} className={`academic-card ${item.bg}`}>
+              <motion.div
+                key={i}
+                className={`academic-card ${item.bg}`}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+
                 <div className="academic-icon">{item.icon}</div>
 
                 <div className="academic-overlay">
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </Reveal>

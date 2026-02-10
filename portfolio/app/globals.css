@@ -15,6 +15,9 @@
   --shadow-strong: 0 30px 60px rgba(15, 23, 42, 0.15);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
