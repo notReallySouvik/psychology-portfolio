@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <p>
-          © {new Date().getFullYear()} Her Name — Psychology Portfolio
+          © {new Date().getFullYear()} Name — Psychology Portfolio
         </p>
 
         <div className="footer-links">
